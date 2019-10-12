@@ -1,26 +1,26 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
+import Alert from "./ui-component/Alert";
+class App extends React.Component {
+    render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+        <Alert
+            type="danger"
+            message ="Its danger Alert"
+        />
+        <Alert
+            type="success"
+            message ="Its success Alert"
+        />
+        <Alert type="warning"  >
+            <h2 className="alert alert-header"> Alert Header without msg </h2>
+        </Alert>
+        <Alert  type="primary"message ="Its primary Alert with header in children">
+            <h2 className="alert alert-header"> Alert Header </h2>
+        </Alert>
     </div>
   );
+    }
 }
 
 export default App;
