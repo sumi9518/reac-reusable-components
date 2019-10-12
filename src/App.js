@@ -32,8 +32,7 @@ class App extends React.Component {
 
                 />
 
-                <Alert type="warning"  toggle = {this.AlertToggle}
-                >
+                <Alert type="warning"  toggle = {this.AlertToggle}>
                     <h2 className="alert alert-header"> Alert Header without msg </h2>
                 </Alert>
 
