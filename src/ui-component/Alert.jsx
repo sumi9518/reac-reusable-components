@@ -6,7 +6,7 @@ const Alert = (props) => {
         <div>
             {
                 props.show &&
-                <div className={`alert alert-${props.type}`} role="alert">
+                <div onClick={props.toggle} className={`alert alert-${props.type}`} role="alert">
                     {props.message ? props.message : props.children}
                 </div>
             }
@@ -16,12 +16,14 @@ const Alert = (props) => {
 Alert.propTypes = {
     type: propTypes.string.isRequired,
     message: propTypes.string,
-    show: propTypes.bool
+    show: propTypes.bool,
+    toggle : propTypes.func
 }
 Alert.defaultProps={
     type:"primary",
-    message: "deafult message",
-    show: true
+    message: "default message",
+    show: true,
+    toggle() {}
 }
 
 export default Alert;
