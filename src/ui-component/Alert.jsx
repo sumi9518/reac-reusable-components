@@ -1,5 +1,5 @@
 import React from 'react';
-import  propTypes from 'prop-types';
+import propTypes from 'prop-types';
 
 const Alert = (props) => {
     return (
@@ -17,13 +17,29 @@ Alert.propTypes = {
     type: propTypes.string.isRequired,
     message: propTypes.string,
     show: propTypes.bool,
-    toggle : propTypes.func
+    toggle: propTypes.func
 }
-Alert.defaultProps={
-    type:"primary",
+Alert.defaultProps = {
+    type: "primary",
     message: "default message",
     show: true,
-    toggle() {}
+    toggle() {
+    }
 }
 
-export default Alert;
+const Animate = (Component) => {
+
+    const CreateAnimatedComponent = () => {
+        return (
+            <div className="wow bounceInUp">
+            <Component />
+            {/* mount old component*/}
+            </div>
+    );
+    };
+
+    return CreateAnimatedComponent;
+};
+const newAlert = Animate(Alert);
+
+export default newAlert;

@@ -9,11 +9,11 @@ class App extends React.Component {
         }
     }
 
-        AlertToggle = () =>{
+    AlertToggle = () => {
         this.setState({
             showAlert: !this.state.showAlert
         });
-        }
+    }
 
     render() {
         return (
@@ -21,26 +21,11 @@ class App extends React.Component {
                 <Alert
                     type="danger"
                     message="Its danger Alert"
-                    toggle = {this.AlertToggle}
-                    show = {this.state.showAlert}
+                    // toggle={this.AlertToggle}
+                    show={!this.state.showAlert}
                 />
 
-                <Alert
-                    type="success"
-                    message="Its success Alert"
-                    toggle = {this.AlertToggle}
 
-                />
-
-                <Alert type="warning"  toggle = {this.AlertToggle}>
-                    <h2 className="alert alert-header"> Alert Header without msg </h2>
-                </Alert>
-
-                <Alert type="primary" message="Its primary Alert with header in children"   toggle = {this.AlertToggle}
-
-                >
-                    <h2 className="alert alert-header"> Alert Header </h2>
-                </Alert>
             </div>
         );
     };
